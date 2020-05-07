@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "covid-19",
+    "slug": "covid-19",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/fever.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#473f96"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.v1n1c1us.covidapp",
+      "versionCode": 1
+    }
+  }
+}
