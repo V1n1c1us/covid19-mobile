@@ -1,55 +1,44 @@
+
 <h1 align="center">
-    <img alt="Covid-18 BR" src="https://github.com/V1n1c1us/gostack-primeiro-projeto-com-react/blob/master/src/assets/logo.svg"/>
+    <img alt="Covid-19 BR" src="https://github.com/V1n1c1us/covid19-mobile/blob/master/assets/icon.png?raw=true"/>
     <br>
-    React Github Explorer
+    Covid-19 BR
 </h1>
 
 <h4 align="center">
-  List your favorite GitHub repositories and see information and issues for each of them.
+  This app aims to list updated data from time to time about COVID-19 cases in Brazil
 </h4>
 
 <p align="center">
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
-
-![App Screenshot](https://github.com/V1n1c1us/gostack-primeiro-projeto-com-react/blob/master/src/assets/img_readme.png)
 <p align="center">
-  <a href="https://vgitexplorer.netlify.app/" target="_blank">
-    Demo on Netlify
-  </a>
+    <img alt="Covid-18 BR" src="https://github.com/V1n1c1us/covid19-mobile/blob/master/assets/mockup.png?raw=true"/>
+</p>
+<p align="center">
+  <a href="https://expo.io/@franceschi/covid-19" target="_blank">
+    Demo on Expo</a> or <a href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40franceschi/covid-19-974d30a85d1e4c159810907c921106ac-signed.apk" target="_blank">Download .apk Here</a>
 </p>
 
 ## :rocket: Technologies
 
-This project was developed at the [RocketSeat GoStack Bootcamp](https://rocketseat.com.br/bootcamp) with the following technologies:
+This project was developed with the following technologies:
 
--  [ReactJS](https://reactjs.org/)
+-  [React Native]((https://reactnative.dev/))
 -  [React Router v4](https://github.com/ReactTraining/react-router)
 -  [styled-components](https://www.styled-components.com/)
--  [GitHub REST API v3](https://developer.github.com/v3/)
--  [VS Code][vc] with [EditorConfig][vceditconfig], [ESLint][vceslint] and [Prettier][vcprettier]
+-  [Expo]((https://expo.io/))
+-  [Lottie](((https://github.com/react-native-community/lottie-react-native)))
+-  [API](https://github.com/mathdroid/covid-19-api) - Serving data from John Hopkins University CSSE as a JSON API
+-  [VS Code][vc]
   
-## :information_source: How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v10.16][nodejs] or higher + [Yarn v1.13][yarn] or higher installed on your computer. From your command line:
+## :information_source: Credits
 
-```bash
-# Clone this repository
-$ git clone https://github.com/V1n1c1us/gostack-primeiro-projeto-com-react.git
-
-# Go into the repository
-$ cd react-github-repo-list
-
-# Install dependencies
-$ yarn install
-
-# Run the app
-$ yarn start
-```
+<p>COVID-19 global data (from JHU CSSE for now) as-a-service https://covid19.mathdro.id/))</p>
 
 ---
-
 Made with ♥ by Vinícius Diehl de Franceschi :wave: [Get in touch!](https://www.linkedin.com/in/vin%C3%ADcius-diehl-de-franceschi-8557b3130/)
 
 [nodejs]: https://nodejs.org/
