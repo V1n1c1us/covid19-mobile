@@ -1,21 +1,22 @@
-import styled, { css }from 'styled-components/native';
+import styled from 'styled-components/native';
+
+export const Container = styled.View`
+  background-color: #fff;
+  flex: 1;
+`;
 
 export const Header = styled.View`
   background-color: #473f96;
-  height: 300px;
+  height: 290px;
   padding: 20px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-`;
-export const HeaderIcons = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
 `;
 
 export const HeaderText = styled.Text`
   font-size: 30px;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 20px;
   color: #fdfdfe;
 `;
 
@@ -32,14 +33,8 @@ export const HeaderDescription = styled.Text`
   color: #fdfdfe;
 `;
 
-export const Container = styled.View`
-  /* flex: 1; */
-  background-color: #fff;
-`;
-
 export const CardContainer = styled.View`
   margin-top: 20px;
-
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -65,7 +60,7 @@ export const CardText = styled.Text`
 `;
 
 export const ContainerSymptoms = styled.View`
-  margin: 30px 15px;
+  margin: 55px 15px;
   flex-direction: row;
   justify-content: space-between;
 `;
@@ -93,7 +88,7 @@ export const Footer = styled.View`
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 20px;
+  bottom: 10px;
 
   align-items: center;
 `;

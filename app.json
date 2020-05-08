@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "covid-19",
+    "name": "Covid-19",
     "slug": "covid-19",
     "platforms": [
       "ios",
@@ -10,7 +10,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/fever.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#473f96"
     },
