@@ -17,7 +17,7 @@
 </p>
 <p align="center">
   <a href="https://expo.io/@franceschi/covid-19" target="_blank">
-    Demo on Expo</a> or <a href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40franceschi/covid-19-974d30a85d1e4c159810907c921106ac-signed.apk" target="_blank">Download .apk Here</a>
+    Demo using expo</a> or <a href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40franceschi/covid-19-974d30a85d1e4c159810907c921106ac-signed.apk" target="_blank">Download the .apk Here</a>
 </p>
 
 ## :rocket: Technologies
