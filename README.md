@@ -11,7 +11,6 @@
 
 <p align="center">
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 <p align="center">
     <img alt="Covid-18 BR" src="https://github.com/V1n1c1us/covid19-mobile/blob/master/assets/mockup.png?raw=true"/>
@@ -25,11 +24,11 @@
 
 This project was developed with the following technologies:
 
--  [React Native]((https://reactnative.dev/))
+-  [React Native](https://reactnative.dev/)
 -  [React Router v4](https://github.com/ReactTraining/react-router)
 -  [styled-components](https://www.styled-components.com/)
--  [Expo]((https://expo.io/))
--  [Lottie](((https://github.com/react-native-community/lottie-react-native)))
+-  [Expo](https://expo.io/)
+-  [Lottie](https://github.com/react-native-community/lottie-react-native)
 -  [API](https://github.com/mathdroid/covid-19-api) - Serving data from John Hopkins University CSSE as a JSON API
 -  [VS Code][vc]
   
