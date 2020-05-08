@@ -10,7 +10,7 @@
 </h4>
 
 <p align="center">
-  <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-technologies">Technologies</a>
 </p>
 <p align="center">
     <img alt="Covid-18 BR" src="https://github.com/V1n1c1us/covid19-mobile/blob/master/assets/mockup.png?raw=true"/>
