@@ -13,15 +13,21 @@ export const Header = styled.View`
   border-bottom-right-radius: 40px;
 `;
 
+export const HeaderPicker = styled.View`
+  margin-top: 10px;
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const HeaderText = styled.Text`
   font-size: 30px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px;
   color: #fdfdfe;
 `;
 
 export const HeaderTitle = styled.Text`
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 18px;
   color: #fdfdfe;
   font-weight: bold;
@@ -29,7 +35,7 @@ export const HeaderTitle = styled.Text`
 
 export const HeaderDescription = styled.Text`
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 5px;
   color: #fdfdfe;
 `;
 
