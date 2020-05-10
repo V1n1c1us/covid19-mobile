@@ -17,6 +17,10 @@ export const HeaderPicker = styled.View`
   margin-top: 10px;
   flex-direction: row;
   align-items: center;
+  background-color: #fff;
+  border-radius: 20;
+  width: 190px;
+  box-shadow: 10px 20px 20px red;
 `;
 
 export const HeaderText = styled.Text`

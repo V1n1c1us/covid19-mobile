@@ -36,28 +36,15 @@ import {
 export default function Main() {
   const [loading, setLoading] = useState(true);
   const [cases, setCases] = useState([]);
-  const [selectedValue, setSelectedValue] = useState([]);
+  const [selectedValue, setSelectedValue] = useState(['BR']);
 
   useEffect(() => {
     api.get(`${selectedValue}/confirmed`).then(response => {
-      setCases(response.data);
-      setLoading(false);
-      console.log(`${selectedValue}/confirmed`);
-    });
-  }, []);
-
-  // const handleCountry = (itemValue) => {
-
-  //   api.get(`${selectedValue}/confirmed`).then(response => {
-  //     setCases(response.data);
-  //     setLoading(false);
-  //     console.log(`${selectedValue}/confirmed`);
-  //   });
-
-  //    setSelectedValue(itemValue);
-
-  //    //console.log('no handle', selectedValue);
-  // };
+        setCases(response.data);
+        setLoading(false);
+        console.log(`${selectedValue}/confirmed`);
+      })
+  }, [selectedValue]);
 
   return (
     <Container>
@@ -70,19 +57,19 @@ export default function Main() {
           <HeaderPicker>
             <Picker
               selectedValue={selectedValue}
-              style={{ height: 32, width: 150, color: '#fff', fontWeight: 'bold'}}
+              style={{ height: 32, width: 150, color: '#000', fontWeight: 'bold'}}
               onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
               prompt="País"
             >
+              <Picker.Item label='Brazil' value={selectedValue} />
               {countryes.map((item) => (
-                <Picker.Item key={item.code} label={item.name} value={item.code} />
+                <Picker.Item key={item.code} label={item.name ? item.name : selectedValue} value={item.code} />
               ))}
           </Picker>
           <Flag
             code={selectedValue}
             size={32}
           />
-          <Text>{selectedValue}</Text>
           </HeaderPicker>
         <HeaderTitle>
           Você está se sentindo doente?
@@ -100,7 +87,7 @@ export default function Main() {
           keyExtractor={cases => cases.uid.toString()}
           renderItem={({ item: caseItem}) => (
           <CardContainer>
-              <Card cardColor="#f4a641" cardWith="170">
+              <Card cardColor="#f4a641" cardWith="170" style={{ shadowOpacity: 0.75, shadowRadius: 5,}}>
                 <CardTitle>Confirmados</CardTitle>
                 <CardText>{caseItem.confirmed}</CardText>
               </Card>
