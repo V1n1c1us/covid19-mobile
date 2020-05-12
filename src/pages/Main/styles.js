@@ -18,9 +18,11 @@ export const HeaderPicker = styled.View`
   flex-direction: row;
   align-items: center;
   background-color: #fff;
-  border-radius: 20;
-  width: 190px;
-  box-shadow: 10px 20px 20px red;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 135px;
 `;
 
 export const HeaderText = styled.Text`
@@ -43,34 +45,27 @@ export const HeaderDescription = styled.Text`
   color: #fdfdfe;
 `;
 
+export const StateContainer = styled.View`
+  padding: 5px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StateTitle = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+  color: #473f96;
+`;
+
 export const CardContainer = styled.View`
-  margin-top: 20px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 `;
 
-export const Card = styled.View`
-  background-color: ${props => props.cardColor || 'white'};
-  margin: 10px 10px;
-  padding: 10px;
-  border-radius: 10px;
-  min-width: ${props => props.cardWith || '110'}px;
-`;
-
-export const CardTitle = styled.Text`
-  color: #fff;
-`;
-
-export const CardText = styled.Text`
-  color: #fff;
-  font-weight: bold;
-  margin-top: 20px;
-  font-size: 18px;
-`;
-
 export const ContainerSymptoms = styled.View`
-  margin: 55px 15px;
+  margin: 40px 15px;
   flex-direction: row;
   justify-content: space-between;
 `;
@@ -84,14 +79,6 @@ export const TitleSymptoms = styled.Text`
 
 export const InfoSymptoms = styled.Text`
   margin-left: 15px;
-`;
-
-export const TextSymptoms = styled.Text`
-  margin-top: 5px;
-  text-align: center;
-  font-weight: bold;
-  color: #473f96;
-
 `;
 
 export const Footer = styled.View`
