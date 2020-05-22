@@ -1,98 +1,100 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import {Image, StatusBar, Text, View, Linking, Picker} from 'react-native'
-import { FlatList } from 'react-native-gesture-handler';
+import React, { useState, useEffect } from 'react';
+import {Image, StatusBar, Linking, Picker} from 'react-native'
 
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import Icon from 'react-native-vector-icons/Feather';
 import states from '../../utils/brasil.js';
-//import formatValue from '../../utils/formatValue.js';
 import api from '../../services/api';
 
 import Loading from '../../components/Loading';
 import Cards from '../../components/Card';
-import Symptoms from '../../components/Symptoms';
 
-import {
-  Title
-} from '../global';
 import {
   Header,
   HeaderPicker,
   HeaderContainer,
   Container,
   InfoTitle,
-  InfoDescription,
+  HeaderSelect,
   HeaderTitle,
   CardContainer,
-  UpdateTime,
   StateContainer,
   StateTitle,
-  InfoSymptoms,
-  ContainerSymptoms,
   Footer,
   SmallText,
 } from './styles';
 
-export default function Main() {
+export default function BrStates() {
   const [loading, setLoading] = useState(true);
   const [cases, setCases] = useState([]);
+  const [flags, setFlags] = useState();
+  const [selectedValue, setSelectedValue] = useState('AC');
 
   useEffect(() => {
-    api.get(`/`).then(response => {
-      setCases(response.data.data)
+    api.get(`uf/${selectedValue}`).then(response => {
+      setCases(response.data)
       setLoading(false);
     }).catch(() => {
       setLoading(true);
     })
-}, []);
+    const getFlag = `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${selectedValue}.png`;
+    setFlags(getFlag);
+}, [selectedValue]);
 
-return (
+  return (
     <Container>
       <StatusBar
         barStyle="light-content"
         backgroundColor="#473f96"
       />
-      <Header style={{ elevation: 5}}>
+      <Header>
         <HeaderContainer>
           <HeaderTitle>Covid-19</HeaderTitle>
         </HeaderContainer>
-        <InfoTitle>
-          Você está se sentindo doente?
-        </InfoTitle>
-        <InfoDescription>
-          As pessoas que contraíram o vírus podem levar até 14 dias antes de apresentarem algum sintoma. Se você apresentar algum sintoma, procure atendimento médico.
-        </InfoDescription>
-        <Text style={{ fontSize: 11, color: '#fff', marginTop: 20}}>Fonte: Organização Mundial da Saúde (OMS)</Text>
+        <HeaderSelect>
+          <InfoTitle>
+            Selecione o estado
+          </InfoTitle>
+          <HeaderPicker>
+            <Picker
+              selectedValue={selectedValue}
+              style={{ height: 32, width: 90, color: '#000', fontWeight: 'bold', elevation: 2 }}
+              onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+              prompt="Selecione um Estado"
+            >
+              {states.map((item) => (
+                <Picker.Item key={item.id} label={item.uf} value={item.uf} />
+              ))}
+            </Picker>
+            <Image source={{uri: flags}} style={{width: 45, height: 30}}/>
+          </HeaderPicker>
+        </HeaderSelect>
       </Header>
 
       <StateContainer>
-      <StateTitle>Brasil</StateTitle>
+      <StateTitle>{cases.state}</StateTitle>
       {loading ? (
         <Loading/>
       ): (
       <CardContainer>
+
         <Cards title="Casos Confirmados" cardColor="#f4a641">
-          { cases.confirmed }
+          { cases.cases }
         </Cards>
         <Cards title="Óbitos" cardColor="#f45959">
-          { cases.deaths }
+        { cases.deaths }
         </Cards>
         <Cards title="Suspeitos" cardColor="#473f96">
-          { cases.deaths }
+        { cases.suspects }
         </Cards>
         <Cards cardColor="#3ed26f" icon="trending-up">
-          { cases.recovered }
+        { cases.cases + cases.deaths + cases.suspects }
         </Cards>
-        <SmallText>Dados atualizado {moment(cases.updated_at).startOf('hour').fromNow()}</SmallText>
+        <SmallText>Dados atualizado {moment(cases.datetime).startOf('hour').fromNow()}</SmallText>
       </CardContainer>
       )}
       </StateContainer>         
-
-      
-      <ContainerSymptoms>
-        <Symptoms/>
-      </ContainerSymptoms>
       <Footer>
         <SmallText onPress={() => Linking.openURL('https://github.com/V1n1c1us')}><Icon name="github" size={9} color="#000" /> V1n1c1us</SmallText>
       </Footer>

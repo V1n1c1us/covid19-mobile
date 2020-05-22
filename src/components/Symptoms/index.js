@@ -5,24 +5,34 @@ import cough from '../../../assets/cough.png';
 import fever from '../../../assets/fever.png';
 import tiredness from '../../../assets/tiredness.png';
 
-import { TextSymptoms } from './styles';
+import { Container, ContentSymptoms, ContentSymptomsImage , TextSymptoms, TitleSymptoms, InfoSymptoms } from './styles';
 
 export default function Symptoms() {
 
   return (
     <>
-      <View>
-        <Image source={cough} style={{ width: 100, height:  100 }}/>
-        <TextSymptoms>Tosse</TextSymptoms>
-      </View>
-      <View>
-        <Image source={fever} style={{ width: 100, height:  100 }}/>
-        <TextSymptoms>Febre</TextSymptoms>
-      </View>
-      <View>
-        <Image source={tiredness} style={{ width: 100, height:  100 }}/>
-        <TextSymptoms>Cansaço</TextSymptoms>
-      </View>
+      <Container>
+        <TitleSymptoms>Sintomas</TitleSymptoms>
+        <InfoSymptoms>Os sintomas mais comuns do COVID-19 são:</InfoSymptoms>
+        <ContentSymptoms>
+          
+          <ContentSymptomsImage>
+            <Image source={cough} style={{ width: 80, height:  80 }}/>
+            <TextSymptoms>Tosse</TextSymptoms>
+          </ContentSymptomsImage>
+          
+          <ContentSymptomsImage>
+            <Image source={fever} style={{ width: 80, height:  80 }}/>
+            <TextSymptoms>Febre</TextSymptoms>
+          </ContentSymptomsImage>
+          
+          <ContentSymptomsImage>
+            <Image source={tiredness} style={{ width: 80, height:  80 }}/>
+            <TextSymptoms>Cansaço</TextSymptoms>
+          </ContentSymptomsImage>
+
+        </ContentSymptoms>
+      </Container>
     </>
   )
 }

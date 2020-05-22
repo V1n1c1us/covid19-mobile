@@ -6,11 +6,8 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  background-color: #473f96;
   height: 290px;
   padding: 20px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
 `;
 
 export const HeaderContainer = styled.View`
@@ -19,11 +16,16 @@ export const HeaderContainer = styled.View`
   align-items: center;
 `;
 
+export const HeaderSelect = styled.View`
+  align-items: center;
+  justify-content: center;
+`;
+
 export const HeaderPicker = styled.View`
   flex-direction: row;
   align-items: center;
-
-  width: 130px;
+  
+  margin-top: 70px;
   background-color: #fff;
 
   border-top-left-radius: 50px;
@@ -34,7 +36,7 @@ export const HeaderPicker = styled.View`
 
 export const HeaderTitle = styled.Text`
   font-size: 30px;
-  color: #fdfdfe;
+  color: #473f96;
   font-weight: bold;
 `;
 
@@ -42,24 +44,25 @@ export const HeaderText = styled.Text`
   font-size: 30px;
   font-weight: bold;
   margin-top: 10px;
-  color: #fdfdfe;
+  color: #473f96;
 `;
 
 export const InfoTitle = styled.Text`
   margin-top: 30px;
   font-size: 18px;
-  color: #fdfdfe;
+  color: #473f96;
   font-weight: bold;
+  text-align: center;
 `;
 export const InfoDescription = styled.Text`
   font-size: 16px;
   margin-top: 10px;
-  color: #fdfdfe;
+  color: #473f96;
 `;
 
 export const StateContainer = styled.View`
   flex: 1;
-  margin-top: 10px;
+  margin-top: 30px;
 `;
 
 export const StateTitle = styled.Text`
@@ -71,17 +74,20 @@ export const StateTitle = styled.Text`
 
 export const CardContainer = styled.View`
   flex-direction: row;
+  flex: 1;
   flex-wrap: wrap;
+
   justify-content: center;
+
+  margin-top: 20px;
+  background-color: #473f96;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
 `;
 
 export const SmallText  = styled.Text`
   font-size: 10px;
-`;
-
-export const ContainerSymptoms = styled.View`
-  flex: 1;
-  margin-top: 30px;
+  color: #fff;
 `;
 
 export const Footer = styled.View`
