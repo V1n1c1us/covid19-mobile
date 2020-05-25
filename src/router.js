@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Main from '../src/pages/Main';
 import BrStates from '../src/pages/BrStates';
@@ -14,7 +14,7 @@ export default function Routes() {
   return (
     <NavigationContainer>
      <Tab.Navigator
-      initialRouteName="BrStates"
+      initialRouteName="Main"
       tabBarOptions={{
         activeTintColor: '#473F97',
         showLabel: false,
@@ -25,7 +25,7 @@ export default function Routes() {
           component={Main}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Icon name="home" color={color} size={size}/>
+              <Icon name="globe-americas" color={color} size={26}/>
             ),
           }}
           />
@@ -33,8 +33,8 @@ export default function Routes() {
           name="BrStates"
           component={BrStates}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="bar-chart-2" size={size} />
+            tabBarIcon: ({ color, focused }) => (
+              <Icon name={'map-marked-alt'} color={color} size={26} />
             ),
           }}
         />
@@ -42,8 +42,8 @@ export default function Routes() {
           name="News"
           component={News}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="file-text" size={size} />
+            tabBarIcon: ({ color, focused }) => (
+              <Icon name={'newspaper'} color={color} size={26} />
             ),
           }}
         />

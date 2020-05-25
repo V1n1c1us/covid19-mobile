@@ -5,19 +5,14 @@ export const Container = styled.View`
 `;
 
 export const ContentSymptoms = styled.View`
-  flex: 1;
   flex-direction: row;
-  
   justify-content: space-between;
-  align-items: center;
-
   margin: 20px;
-
 `;
 
 export const ContentSymptomsImage = styled.View`
+  flex-direction: column;
 `;
-
 
 export const TextSymptoms = styled.Text`
   margin-top: 5px;
@@ -31,6 +26,7 @@ export const TitleSymptoms = styled.Text`
   font-weight: bold;
   margin: 10px 15px;
   font-size: 20px;
+  text-align: center;
 `;
 
 export const InfoSymptoms = styled.Text`

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import {Image, StatusBar, Linking, Picker} from 'react-native'
+import React, { useState, useEffect, useCallback } from 'react';
+import { Image, StatusBar, Picker } from 'react-native'
 
 import moment from 'moment';
 import 'moment/locale/pt-br';
-import Icon from 'react-native-vector-icons/Feather';
+
 import states from '../../utils/brasil.js';
 import api from '../../services/api';
 
@@ -11,18 +11,21 @@ import Loading from '../../components/Loading';
 import Cards from '../../components/Card';
 
 import {
-  Header,
-  HeaderPicker,
-  HeaderContainer,
   Container,
-  InfoTitle,
-  HeaderSelect,
+  Header,
+  HeaderContainer,
   HeaderTitle,
+  InfoTitle,
+  InfoDescription,
+  Title,
+  SmallText,
+} from '../globalStyle';
+
+import {
+  HeaderPicker,
   CardContainer,
   StateContainer,
-  StateTitle,
-  Footer,
-  SmallText,
+  
 } from './styles';
 
 export default function BrStates() {
@@ -38,9 +41,13 @@ export default function BrStates() {
     }).catch(() => {
       setLoading(true);
     })
+    handleFlags();
+  }, [selectedValue]);  
+
+  const handleFlags = useCallback(() => {
     const getFlag = `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${selectedValue}.png`;
     setFlags(getFlag);
-}, [selectedValue]);
+  },[selectedValue]);
 
   return (
     <Container>
@@ -48,18 +55,13 @@ export default function BrStates() {
         barStyle="light-content"
         backgroundColor="#473f96"
       />
-      <Header>
-        <HeaderContainer>
-          <HeaderTitle>Covid-19</HeaderTitle>
-        </HeaderContainer>
-        <HeaderSelect>
-          <InfoTitle>
-            Selecione o estado
-          </InfoTitle>
+      <Header style={{ elevation: 5}}>
+      <HeaderContainer>
+        <HeaderTitle>Covid-19</HeaderTitle>
           <HeaderPicker>
             <Picker
               selectedValue={selectedValue}
-              style={{ height: 32, width: 90, color: '#000', fontWeight: 'bold', elevation: 2 }}
+              style={{ height: 32, width: 90, color: '#000', fontWeight: 'bold', elevation: 2}}
               onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
               prompt="Selecione um Estado"
             >
@@ -67,37 +69,39 @@ export default function BrStates() {
                 <Picker.Item key={item.id} label={item.uf} value={item.uf} />
               ))}
             </Picker>
-            <Image source={{uri: flags}} style={{width: 45, height: 30}}/>
+            <Image source={{uri: flags}} style={{width: 32, height: 20}}/>
           </HeaderPicker>
-        </HeaderSelect>
+        </HeaderContainer>
+        <InfoTitle>
+          Você está se sentindo doente?
+        </InfoTitle>
+        <InfoDescription>
+          Acompanhe diariamente a evolução do COVID-19 em cada um de nossos estados. 
+        </InfoDescription>
       </Header>
 
       <StateContainer>
-      <StateTitle>{cases.state}</StateTitle>
-      {loading ? (
-        <Loading/>
-      ): (
-      <CardContainer>
-
-        <Cards title="Casos Confirmados" cardColor="#f4a641">
-          { cases.cases }
-        </Cards>
-        <Cards title="Óbitos" cardColor="#f45959">
-        { cases.deaths }
-        </Cards>
-        <Cards title="Suspeitos" cardColor="#473f96">
-        { cases.suspects }
-        </Cards>
-        <Cards cardColor="#3ed26f" icon="trending-up">
-        { cases.cases + cases.deaths + cases.suspects }
-        </Cards>
-        <SmallText>Dados atualizado {moment(cases.datetime).startOf('hour').fromNow()}</SmallText>
-      </CardContainer>
-      )}
+        <Title>{cases.state}</Title>
+        {loading ? (
+          <Loading/>
+        ): (
+          <CardContainer>
+            <Cards title="Casos Confirmados" cardColor="#f4a641">
+              { cases.cases }
+            </Cards>
+            <Cards title="Óbitos" cardColor="#f45959">
+              { cases.deaths }
+            </Cards>
+            <Cards title="Casos Suspeitos" cardColor="#473f96">
+              { cases.suspects }
+            </Cards>
+            <Cards title="Total de Casos" cardColor="#3ed26f">
+              { cases.cases + cases.deaths + cases.suspects }
+            </Cards>
+            <SmallText>Dados atualizado {moment(cases.datetime).startOf('hour').fromNow()}</SmallText>
+          </CardContainer>
+        )}
       </StateContainer>         
-      <Footer>
-        <SmallText onPress={() => Linking.openURL('https://github.com/V1n1c1us')}><Icon name="github" size={9} color="#000" /> V1n1c1us</SmallText>
-      </Footer>
     </Container>
   );
 }

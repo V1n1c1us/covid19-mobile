@@ -1,12 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import {Image, StatusBar, Text, View, Linking, Picker} from 'react-native'
-import { FlatList } from 'react-native-gesture-handler';
+import React, { useState, useEffect } from 'react';
+import { StatusBar, Text } from 'react-native'
 
 import moment from 'moment';
 import 'moment/locale/pt-br';
-import Icon from 'react-native-vector-icons/Feather';
-import states from '../../utils/brasil.js';
-//import formatValue from '../../utils/formatValue.js';
+
 import api from '../../services/api';
 
 import Loading from '../../components/Loading';
@@ -14,24 +11,20 @@ import Cards from '../../components/Card';
 import Symptoms from '../../components/Symptoms';
 
 import {
-  Title
-} from '../global';
-import {
-  Header,
-  HeaderPicker,
-  HeaderContainer,
   Container,
-  InfoTitle,
-  InfoDescription,
+  Header,
+  HeaderContainer,
   HeaderTitle,
-  CardContainer,
-  UpdateTime,
-  StateContainer,
-  StateTitle,
-  InfoSymptoms,
-  ContainerSymptoms,
-  Footer,
+  InfoDescription,
+  InfoTitle,
+  Title,
   SmallText,
+} from '../globalStyle';
+
+import {
+  StateContainer,
+  CardContainer,
+  ContainerSymptoms,
 } from './styles';
 
 export default function Main() {
@@ -45,9 +38,9 @@ export default function Main() {
     }).catch(() => {
       setLoading(true);
     })
-}, []);
+  }, []);
 
-return (
+  return (
     <Container>
       <StatusBar
         barStyle="light-content"
@@ -63,39 +56,36 @@ return (
         <InfoDescription>
           As pessoas que contraíram o vírus podem levar até 14 dias antes de apresentarem algum sintoma. Se você apresentar algum sintoma, procure atendimento médico.
         </InfoDescription>
-        <Text style={{ fontSize: 11, color: '#fff', marginTop: 20}}>Fonte: Organização Mundial da Saúde (OMS)</Text>
+        <Text style={{ fontSize: 11, color: '#fff', marginTop: 30}}>Fonte: Organização Mundial da Saúde (OMS)</Text>
       </Header>
 
       <StateContainer>
-      <StateTitle>Brasil</StateTitle>
-      {loading ? (
-        <Loading/>
-      ): (
-      <CardContainer>
-        <Cards title="Casos Confirmados" cardColor="#f4a641">
-          { cases.confirmed }
-        </Cards>
-        <Cards title="Óbitos" cardColor="#f45959">
-          { cases.deaths }
-        </Cards>
-        <Cards title="Suspeitos" cardColor="#473f96">
-          { cases.deaths }
-        </Cards>
-        <Cards cardColor="#3ed26f" icon="trending-up">
-          { cases.recovered }
-        </Cards>
-        <SmallText>Dados atualizado {moment(cases.updated_at).startOf('hour').fromNow()}</SmallText>
-      </CardContainer>
-      )}
+        <Title>Brasil</Title>
+        {loading ? (
+          <Loading/>
+        ): (
+          <CardContainer>
+            <Cards title="Casos Confirmados" cardColor="#f4a641">
+              { cases.confirmed }
+            </Cards>
+            <Cards title="Óbitos" cardColor="#f45959">
+              { cases.deaths }
+            </Cards>
+            <Cards title="Casos Ativos" cardColor="#473f96">
+              { cases.cases }
+            </Cards>
+            <Cards title="Casos Recuperados" cardColor="#3ed26f">
+              { cases.recovered }
+            </Cards>
+            <SmallText>Dados atualizado {moment(cases.updated_at).startOf('hour').fromNow()}</SmallText>
+          </CardContainer>
+        )}
       </StateContainer>         
 
       
       <ContainerSymptoms>
         <Symptoms/>
       </ContainerSymptoms>
-      <Footer>
-        <SmallText onPress={() => Linking.openURL('https://github.com/V1n1c1us')}><Icon name="github" size={9} color="#000" /> V1n1c1us</SmallText>
-      </Footer>
     </Container>
   );
 }

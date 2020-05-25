@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Card = styled.View`
 background-color: ${props => props.cardColor || 'white'};
-margin: 20px 10px;
+margin: 10px 10px;
 padding: 10px;
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
