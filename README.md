@@ -29,14 +29,15 @@ This project was developed with the following technologies:
 -  [styled-components](https://www.styled-components.com/)
 -  [Expo](https://expo.io/)
 -  [Lottie](https://github.com/react-native-community/lottie-react-native)
--  [API](https://github.com/mathdroid/covid-19-api) - Serving data from John Hopkins University CSSE as a JSON API
+-  [COVID-19 Brazil API](https://covid19-brazil-api.now.sh/)
+-  [NEWS API](https://newsapi.org/)
 -  [VS Code][vc]
   
 
 ## :information_source: Credits
 
-<p>COVID-19 global data (from JHU CSSE for now) as-a-service https://covid19.mathdro.id/))</p>
-
+<p>COVID-19 Brazil API - Notificação de casos de doença pelo coronavírus 2019 (COVID-19) no Brasil</p>
+<p>NEWS API - Is a simple and easy-to-use API that returns JSON metadata for headlines and articles live all over the web right now.
 ---
 Made with ♥ by Vinícius Diehl de Franceschi :wave: [Get in touch!](https://www.linkedin.com/in/vin%C3%ADcius-diehl-de-franceschi-8557b3130/)
 
