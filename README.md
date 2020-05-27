@@ -17,7 +17,7 @@
 </p>
 <p align="center">
   <a href="https://expo.io/@franceschi/covid-19" target="_blank">
-    Demo using expo</a> or <a href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40franceschi/covid-19-974d30a85d1e4c159810907c921106ac-signed.apk" target="_blank">Download the .apk Here</a>
+    Demo using expo</a> or <a href="https://drive.google.com/open?id=1L-m1sn8RgNNc4ZCFwsxkQQl8SQ7otrQH" target="_blank">Download the .apk Here</a>
 </p>
 
 ## :rocket: Technologies
@@ -37,7 +37,7 @@ This project was developed with the following technologies:
 ## :information_source: Credits
 
 <p>COVID-19 Brazil API - Notificação de casos de doença pelo coronavírus 2019 (COVID-19) no Brasil</p>
-<p>NEWS API - Is a simple and easy-to-use API that returns JSON metadata for headlines and articles live all over the web right now.
+<p>NEWS API - Is a simple and easy-to-use API that returns JSON metadata for headlines and articles live all over the web right now.</p>
 ---
 Made with ♥ by Vinícius Diehl de Franceschi :wave: [Get in touch!](https://www.linkedin.com/in/vin%C3%ADcius-diehl-de-franceschi-8557b3130/)
 
