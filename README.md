@@ -13,7 +13,7 @@
   <a href="#rocket-technologies">Technologies</a>
 </p>
 <p align="center">
-    <img alt="Covid-18 BR" src="https://github.com/V1n1c1us/covid19-mobile/blob/master/assets/mockup.png?raw=true"/>
+    <img alt="Covid-18 BR" src="https://github.com/V1n1c1us/covid19-mobile/blob/master/assets/screens.png?raw=true"/>
 </p>
 <p align="center">
   <a href="https://expo.io/@franceschi/covid-19" target="_blank">
