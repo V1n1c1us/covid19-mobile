@@ -73,7 +73,7 @@ export default function BrStates() {
           </HeaderPicker>
         </HeaderContainer>
         <InfoTitle>
-          Você está se sentindo doente?
+          Covid-19 pelos estados do Brasil?
         </InfoTitle>
         <InfoDescription>
           Acompanhe diariamente a evolução do COVID-19 em cada um de nossos estados. 

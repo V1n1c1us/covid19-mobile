@@ -31,7 +31,6 @@ export default function News() {
       const { articles } = response.data;  
       setLoading(false);
       setNesw(articles);
-      console.log('chamouAPI');
     }).catch(() => {
       setLoading(true);
     });
