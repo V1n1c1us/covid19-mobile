@@ -25,8 +25,7 @@
 This project was developed with the following technologies:
 
 -  [React Native](https://reactnative.dev/)
--  [React Router v4](https://github.com/ReactTraining/react-router)
--  [styled-components](https://www.styled-components.com/)
+-  [Styled-components](https://www.styled-components.com/)
 -  [Expo](https://expo.io/)
 -  [Lottie](https://github.com/react-native-community/lottie-react-native)
 -  [COVID-19 Brazil API](https://covid19-brazil-api.now.sh/)
@@ -38,7 +37,8 @@ This project was developed with the following technologies:
 
 <p>COVID-19 Brazil API - Notificação de casos de doença pelo coronavírus 2019 (COVID-19) no Brasil</p>
 <p>NEWS API - Is a simple and easy-to-use API that returns JSON metadata for headlines and articles live all over the web right now.</p>
----
+
+
 Made with ♥ by Vinícius Diehl de Franceschi :wave: [Get in touch!](https://www.linkedin.com/in/vin%C3%ADcius-diehl-de-franceschi-8557b3130/)
 
 [nodejs]: https://nodejs.org/
